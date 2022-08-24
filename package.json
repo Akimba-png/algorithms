@@ -1,0 +1,11 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Базовые алгоритмы поиска и сортировки",
+  "main": "",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Oleg Akimov",
+  "license": "ISC"
+}
