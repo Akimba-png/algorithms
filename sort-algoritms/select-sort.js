@@ -1,5 +1,5 @@
 let count = 0;
-const array = [ 2, 3, 1, 4, 5, 7, 6, 10, 0, 9 ];
+const array = [ 2, 5, 1, 4, 3, 7, 6, 10, 0, 9 ];
 
 function selectSort(array) {
   const arr = array.slice();
