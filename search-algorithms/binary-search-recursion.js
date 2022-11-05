@@ -5,11 +5,22 @@ function binarySearch(arr, target) {
   return (function cycle(start, end) {
     count++;
     const middle = Math.floor((start + end) / 2);
-    if (arr[middle] === target) { return middle }
+    if (target === arr[middle]) { return middle }
     if (target < arr[middle]) { return cycle(start, middle - 1) }
     if (target > arr[middle]) { return cycle(middle + 1, end) }
     return -1;
   })(0, arr.length);
+}
+
+// вариант 2 (базовая проверка)
+function binarySearch(arr, target) {
+  return (function cycle(start, end) {
+    if (end < start) { return - 1}
+    const middle = Math.floor((start + end) / 2);
+    if (target === arr[middle]) { return middle };
+    if (target < arr[middle]) { return cycle(start, middle - 1) }
+    if (target > arr[middle]) { return cycle(middle + 1, end) }
+  })(0, arr.length - 1);
 }
 
 const result = binarySearch(array, 9);
