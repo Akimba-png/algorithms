@@ -19,7 +19,7 @@ function breadthSearch(graph, start, end) {
     if (!graph[currentNode]) {
       graph[currentNode] = [];
     }
-    if (currentNode.includes(end)) {
+    if (graph[currentNode].includes(end)) {
       return true;
     }
     queue.push(...graph[currentNode]);
