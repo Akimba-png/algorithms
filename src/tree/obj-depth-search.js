@@ -1,6 +1,6 @@
-// Поиск в ширину BFS
-// Для обхода используется очередь
-// Алгоритм начинает обход с левой ветви, т.е. с первого потомка
+// Поиск в глубину DFS
+// Для обхода используется стек
+// Алгоритм начинает обход с правого ветви, т.е. с последнего потомка
 
 const obj = {
   id: 1,
@@ -30,24 +30,24 @@ const obj = {
   },
 };
 
-function breadthFirstSearch(obj, target) {
-  const queue = [];
-  queue.push(obj);
+function depthFirstSearch(obj, target) {
+  const stack = [];
+  stack.push(obj);
   let node;
-  while (queue.length) {
-    node = queue.shift();
+  while (stack.length) {
+    node = stack.pop();
     if (Object.hasOwn(node, target)) {
       return node[target];
     }
     const keys = Object.keys(node);
     for (const key of keys) {
       if (typeof node[key] === 'object') {
-        queue.push(node[key]);
+        stack.push(node[key]);
       }
     }
   }
   return null;
 }
 
-const result = breadthFirstSearch(obj, 'point');
+const result = depthFirstSearch(obj, 'point');
 console.log(result);
